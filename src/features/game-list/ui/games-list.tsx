@@ -10,7 +10,7 @@ export async function GamesList() {
         return (
           <Card key={game.id}>
             <CardTitle>
-                Organizator: {game.creator.login}
+                Game with: {game.creator.login}
             </CardTitle>
             <CardContent>
                 Rate: {game.creator.rating}
