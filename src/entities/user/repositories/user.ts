@@ -16,4 +16,8 @@ export function getUser(where: Prisma.UserWhereInput) {
   return prisma.user.findFirst({ where });
 }
 
-export const userRepository = { saveUser, getUser };
+export function getAllUsers() {
+  return prisma.user.findMany();
+}
+
+export const userRepository = { saveUser, getUser, getAllUsers };

@@ -1,11 +1,12 @@
 "use server";
 
-import { createUser, sessionService } from "@/entities/user/server";
+import { sessionService, verifyUserPassword } from "@/entities/user/server";
+
 import { redirect } from "next/navigation";
 
 import { z } from "zod";
 
-export type SignUnFormState = {
+export type SignInFormState = {
   formData?: FormData;
   errors?: {
     login?: string;
@@ -19,10 +20,10 @@ const formDataSchema = z.object({
   password: z.string().min(3),
 });
 
-export const signUpAction = async (
-  state: SignUnFormState,
+export const signInAction = async (
+  state: SignInFormState,
   formData: FormData,
-): Promise<SignUnFormState> => {
+): Promise<SignInFormState> => {
   const data = Object.fromEntries(formData.entries());
   const result = formDataSchema.safeParse(data);
 
@@ -38,17 +39,19 @@ export const signUpAction = async (
     };
   }
 
-  const createUserResult = await createUser(result.data);
+  const verifyUserResult = await verifyUserPassword(result.data);
 
-  if (createUserResult.type === "right") {
-    await sessionService.addSession(createUserResult.value);
+  console.log(verifyUserResult);
+
+  if (verifyUserResult.type === "right") {
+    await sessionService.addSession(verifyUserResult.value);
 
     redirect("/");
   }
 
   const errors = {
-    "user-login-exists": "User with such login already exists",
-  }[createUserResult.error];
+    "wron-login-or-password": "Not correct login or password",
+  }[verifyUserResult.error];
 
   return {
     formData,
