@@ -22,9 +22,9 @@ export function AuthFormLayout({
   description: string;
   fields: React.ReactNode;
   actions: React.ReactNode | undefined;
-  link: React.ReactNode  | undefined;
+  link: React.ReactNode | undefined;
   error: React.ReactNode | undefined;
-  action: ((formData: FormData) => void) | undefined ;
+  action: ((formData: FormData) => void) | undefined;
 }) {
   return (
     <Card className="w-full max-w-md">

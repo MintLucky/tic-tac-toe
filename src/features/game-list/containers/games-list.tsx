@@ -19,4 +19,4 @@ export async function GamesList() {
       })}
     </Layout>
   );
-} 
+}
