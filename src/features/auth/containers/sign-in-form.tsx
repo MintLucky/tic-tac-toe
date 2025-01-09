@@ -26,7 +26,7 @@ export function SignInForm() {
         <BottomLink
           text="Don't have an account?"
           linkText="Sign up"
-          url={'sign-up'}
+          url={"sign-up"}
         />
       }
     />

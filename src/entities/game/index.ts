@@ -1,1 +1,1 @@
-export * as GameDomain from './domain'
+export * as GameDomain from "./domain";

@@ -1,4 +1,4 @@
-import {pbkdf2, randomBytes} from 'node:crypto'
+import { pbkdf2, randomBytes } from "node:crypto";
 
 async function hashPassword(
   password: string,

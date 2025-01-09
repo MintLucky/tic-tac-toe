@@ -9,11 +9,11 @@ export async function verifyUserPassword({
   login: string;
   password: string;
 }) {
-  console.log('login', login)
+  console.log("login", login);
   const users = await userRepository.getAllUsers();
-  console.log('users', users)
+  console.log("users", users);
   const user = await userRepository.getUser({ login });
-  console.log('user', user)
+  console.log("user", user);
 
   if (!user) {
     return left("wron-login-or-password" as const);
