@@ -1,20 +1,21 @@
-import { GameEntity } from "@/entities/game";
+import { GameDomain } from "@/entities/game";
 import React from "react";
 
-export function GameStatus({ game }: { game: GameEntity }) {
-
+export function GameStatus({ game }: { game: GameDomain.GameEntity }) {
   switch (game.status) {
-    case 'idle':
-      return <div className="flex flex-col gap-4 justify-between">
-        <div className="text-lg">
-          x - {game.creator.login}
-        </div>
-        <div className="text-lg">
-          o - pending
-        </div>
-      </div>
-    case 'inProgress':
-    case 'gameOver':
-    case 'gameOverDraw'
+    case "idle":
+      return <div className="text-lg">Waiting for a player</div>;
+
+    case "inProgress": {
+      const currentSymbol = GameDomain.getGameCurrentStep(game);
+      return <div className="text-lg">Current symbol is: {currentSymbol}</div>;
+    }
+    case "gameOver": {
+      const currentSymbol = GameDomain.getGameCurrentStep(game);
+      return <div className="text-lg">Winner is: {currentSymbol}</div>;
+    }
+    case "gameOverDraw": {
+      return <div className="text-lg">Nobody won. Draw game</div>;
+    }
   }
 }

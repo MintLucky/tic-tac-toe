@@ -44,6 +44,7 @@ function dbGameToGameEntity(
   },
 ): GameEntity {
   const players = game.players.map(removePassword);
+
   switch (game.status) {
     case "idle": {
       const [creator] = players;
@@ -54,6 +55,7 @@ function dbGameToGameEntity(
         id: game.id,
         creator: creator,
         status: game.status,
+        field: fieldSchema.parse(game.field),
       } satisfies GameIdleEntity;
     }
 

@@ -10,12 +10,10 @@ import React from "react";
 export function GameLayout({
   status,
   field,
-  actions,
   players,
 }: {
   status?: React.ReactNode;
-  field?: string;
-  actions?: React.ReactNode;
+  field?: React.ReactNode;
   players?: React.ReactNode;
 }) {
   return (
@@ -26,9 +24,8 @@ export function GameLayout({
       <CardContent className="flex flex-col gap-4">
         {players}
         {status}
-        {field}
+        <div className="flex items-center justify-center">{field}</div>
       </CardContent>
-      <CardFooter>{actions}</CardFooter>
     </Card>
   );
 }
