@@ -1,7 +1,7 @@
 import { sessionService } from "@/entities/user/server";
 import { Button } from "@/shared/ui/button";
 import { redirect } from "next/navigation";
-import { routes } from "@/kernel/routes"
+import { routes } from "@/kernel/routes";
 
 export default async function PrivateLayout({
   children,
