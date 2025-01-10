@@ -6,7 +6,7 @@ import { right, matchEither, mapLeft } from "@/shared/lib/either";
 import { useActionState } from "@/shared/lib/react";
 import { startTransition } from "react";
 
-export function CreateButton({}: { action: () => Promise<void> }) {
+export function CreateButton({}: { action?: () => Promise<void> }) {
   const [data, dispatch, isPending] = useActionState(
     createGameAction,
     right(undefined),
@@ -25,7 +25,7 @@ export function CreateButton({}: { action: () => Promise<void> }) {
           })[e],
       )}
     >
-      Создать игру
+      Create Game
     </Button>
   );
 }
