@@ -17,6 +17,7 @@
     "@prisma/client": "^6.1.0",
     "@radix-ui/react-label": "^2.1.1",
     "@radix-ui/react-slot": "^1.1.1",
+    "amqplib": "^0.10.5",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cuid": "^3.0.0",
