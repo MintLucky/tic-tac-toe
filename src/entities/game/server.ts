@@ -1,3 +1,4 @@
+export { stepGame } from "./services/step-game";
 export { surrenderGame } from "./services/surrender-game";
 export { startGame } from "./services/start-game";
 export { getGameById } from "./services/get-game";
