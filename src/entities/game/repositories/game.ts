@@ -25,7 +25,6 @@ async function startGame(gameId: GameId, player: PlayerEntity) {
       data: {
         players: {
           create: {
-            id: player.id,
             userId: player.id,
             index: 1,
           }
