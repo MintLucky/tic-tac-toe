@@ -69,7 +69,7 @@ export const getNextSymbol = (gameSymbol: GameSymbol) => {
 
 export const getPlayerSymbol = (
   player: PlayerEntity, 
-  game: GameInProgressEntity
+  game: GameInProgressEntity | GameOverEntity
 ) => {
   const index = game.players.findIndex(p => p.id === player.id)
 
@@ -82,9 +82,8 @@ export const doStep = (
   player: PlayerEntity
 ) => {
   const currentSymbol = getGameCurrentSymbol(game);
-  const nextSymbol = getNextSymbol(currentSymbol);
 
-  if (nextSymbol !== getPlayerSymbol(player, game)) {
+  if (currentSymbol !== getPlayerSymbol(player, game)) {
     return left('not-player-symbol');
   }
 
@@ -92,7 +91,7 @@ export const doStep = (
     return left('game-cell-already-has-symbol');
   }
 
-  const newField = game.field.map((cell, i) => i === index ? nextSymbol : cell)
+  const newField = game.field.map((cell, i) => i === index ? currentSymbol : cell)
 
   if (calculateWinner(newField)) {
     return right({
