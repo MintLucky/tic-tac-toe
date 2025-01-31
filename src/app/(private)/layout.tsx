@@ -2,6 +2,7 @@ import { sessionService } from "@/entities/user/server";
 import { Button } from "@/shared/ui/button";
 import { redirect } from "next/navigation";
 import { routes } from "@/kernel/routes";
+import Link from "next/link";
 
 export default async function PrivateLayout({
   children,
@@ -13,7 +14,9 @@ export default async function PrivateLayout({
   return (
     <div className="flex flex-col grow">
       <header className="px-10 py-4 flex flex-row gap-4 justify-between border-b border-b-primary/50">
-        <div>Tik tak toe</div>
+        <div>
+          <Link href={"/"}>Tik tak toe</Link>
+        </div>
         <div className="flex items-center gap-4">
           <div className="text-lg">{session.login}</div>
           <form
