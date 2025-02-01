@@ -1,4 +1,10 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is an online Tic-Tac-Toe game.
+
+Technologies used are: React, NextJS, TypeScript, Prisma, Tailwind, Shadcn, Server-Sent-Events, RabbitMQ, Docker
+
+As an architectural principle, FSD is used.  
+
+
 
 ## Getting Started
 
