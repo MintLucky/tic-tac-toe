@@ -1,6 +1,6 @@
-This is an online Tic-Tac-Toe game.
+## This is an online Tic-Tac-Toe game.
 
-Technologies used are: React, NextJS, TypeScript, Prisma, Tailwind, Shadcn, Server-Sent-Events, RabbitMQ, Docker
+Technologies used are: React, NextJS, TypeScript, Prisma, PostgreSQL, Tailwind, Shadcn, Server-Sent-Events, RabbitMQ, Docker
 
 As an architectural principle, FSD is used.  
 
