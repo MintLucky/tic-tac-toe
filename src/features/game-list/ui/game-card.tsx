@@ -1,6 +1,6 @@
 import { Card, CardTitle, CardContent, CardFooter } from "@/shared/ui/card";
 
-export async function GameCard({
+export function GameCard({
   login,
   rating,
   actions,

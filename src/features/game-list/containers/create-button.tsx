@@ -20,8 +20,8 @@ export function CreateButton({}: { action?: () => Promise<void> }) {
         data,
         (e) =>
           ({
-            ["can-create-only-one-game"]: "Вы можете создать только одну игру",
-            ["user-not-found"]: "Пользователя нету",
+            ["can-create-only-one-game"]: "You can create no more than one game",
+            ["user-not-found"]: "User doesn't exist",
           })[e],
       )}
     >

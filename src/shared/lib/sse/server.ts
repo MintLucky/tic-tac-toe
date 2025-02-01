@@ -1,6 +1,6 @@
 import { NextRequest } from "next/server";
 
-export function sseStream(req: NextRequest) {
+export const sseStream = (req: NextRequest) => {
   const responseStream = new TransformStream();
   const writer = responseStream.writable.getWriter();
   const encoder = new TextEncoder();
@@ -31,4 +31,4 @@ export function sseStream(req: NextRequest) {
     close,
     addCloseListener,
   };
-}
+};
