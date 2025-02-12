@@ -2,7 +2,7 @@
 
 Technologies used are: React, NextJS, TypeScript, Prisma, PostgreSQL, Tailwind, Shadcn, Server-Sent-Events, RabbitMQ, Docker
 
-As an architectural principle, FSD is used.  
+FSD (custom modification of FSD) is used as an architectural principle.
 
 
 
